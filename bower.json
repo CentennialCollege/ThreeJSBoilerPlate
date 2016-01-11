@@ -1,13 +1,13 @@
 {
-  "name": "threejs",
+  "name": "threejsboilerplate",
   "authors": [
     "Tom Tsiliopoulos <tsiliopoulos@hotmail.com>"
   ],
-  "description": "",
+  "description": "ThreeJS Boilerplate for COMP392 - Advanced Graphics @ Centennial College",
   "main": "",
   "moduleType": [],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/CentennialCollege/ThreeJSBoilerPlate",
   "ignore": [
     "**/.*",
     "node_modules",
