@@ -27,15 +27,18 @@ var control;
 var gui;
 var stats;
 function init() {
+    // Instantiate a new Scene object
     scene = new Scene();
     setupRenderer(); // setup the default renderer
     setupCamera(); // setup the camera
+    //Add a Cube to the Scene
     cubeGeometry = new CubeGeometry(6, 6, 6);
     cubeMaterial = new LambertMaterial({ color: 0x00ff00, opacity: 0.5 });
     cube = new Mesh(cubeGeometry, cubeMaterial);
     cube.castShadow = true;
     scene.add(cube);
     console.log("Added Cube Primative to scene...");
+    //Add a Plane to the Scene
     planeGeometry = new PlaneGeometry(20, 20);
     planeMaterial = new LambertMaterial({ color: 0xCCCCCC, opacity: 0.5 });
     plane = new Mesh(planeGeometry, planeMaterial);
@@ -44,6 +47,7 @@ function init() {
     plane.position.y = -2;
     scene.add(plane);
     console.log("Added Plane Primative to scene...");
+    // Add a SpotLight to the scene
     spotLight = new SpotLight(0xffffff);
     spotLight.position.set(10, 20, 20);
     spotLight.castShadow = true;
@@ -70,6 +74,7 @@ function addStatsObject() {
     stats.domElement.style.top = '0px';
     document.body.appendChild(stats.domElement);
 }
+// Setup main game loop
 function gameLoop() {
     stats.update();
     // render using requestAnimationFrame
@@ -80,6 +85,7 @@ function gameLoop() {
     cube.rotation.y += control.rotationSpeed;
     renderer.render(scene, camera);
 }
+// Setup default renderer
 function setupRenderer() {
     renderer = new Renderer();
     renderer.setClearColor(0xCCCCCC, 1.0);
@@ -87,6 +93,7 @@ function setupRenderer() {
     renderer.shadowMapEnabled = true;
     console.log("Finished setting up Renderer...");
 }
+// Setup main camera for the scene
 function setupCamera() {
     camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.x = 15;
